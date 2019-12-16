@@ -18,7 +18,11 @@ MonoBehaviour:
   - Example
   - General
   - Main Menu
+  - Level Select
+  - End Level
   Categories:
   - {fileID: 11400000, guid: 40f9e81ff80114a47a3721228ba749ed, type: 2}
   - {fileID: 11400000, guid: 73d59ed76642f8041be3b3bf73ff9d83, type: 2}
   - {fileID: 11400000, guid: a13c51e459c13934b894c07e6e06b989, type: 2}
+  - {fileID: 11400000, guid: 33f5ab1c6be93474b899f8879a648212, type: 2}
+  - {fileID: 11400000, guid: b87f881ad1b59fc40b9c6fbad0eec98c, type: 2}

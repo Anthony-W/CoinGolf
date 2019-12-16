@@ -10,10 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f42f06ff6cc543ea942180e019f0fc8d, type: 3}
-  m_Name: UIButton_MainMenu
+  m_Name: UIButton_LevelSelect
   m_EditorClassIdentifier: 
-  CategoryName: Main Menu
+  CategoryName: Level Select
   DatabaseType: 0
   Names:
-  - Level Select
-  - Main Menu
+  - 1-1
+  - 1-2
+  - 1-3
+  - 1-4
+  - 1-5
+  - 1-6
+  - 1-7
+  - 1-8
+  - 1-9
+  - back
+  - main menu
+  - forward
