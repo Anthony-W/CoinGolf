@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using Doozy.Engine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI StrokeCounter = null;
     [SerializeField] TextMeshProUGUI Par = null;
     [SerializeField] GameObject StarHolder = null;
-    [SerializeField] UIView EndLevelView = null;
+    [SerializeField] GameObject EndPanel = null;
 
     Animator[] stars;
 
@@ -33,8 +33,8 @@ public class UIManager : MonoBehaviour
 
     public void ShowStars(int numStars)
     {
+        showUI();
         StartCoroutine(ShowStarsCoroutine(numStars));
-        ShowUI();
     }
 
     private IEnumerator ShowStarsCoroutine(int numStars)
@@ -48,8 +48,23 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    private void ShowUI()
+    private void showUI()
     {
-        EndLevelView.Show();
+        EndPanel.SetActive(true);
+    }
+
+    public void LoadNextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+    }
+
+    public void ReplayLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void ReturnHome()
+    {
+        SceneManager.LoadScene(0);
     }
 }
