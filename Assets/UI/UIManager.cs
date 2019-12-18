@@ -9,31 +9,48 @@ public class UIManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI StrokeCounter = null;
     [SerializeField] TextMeshProUGUI Par = null;
     [SerializeField] GameObject StarHolder = null;
-    [SerializeField] GameObject EndPanel = null;
+
+    [SerializeField] GameObject WinPanel = null;
+    [SerializeField] GameObject LosePanel = null;
+    [SerializeField] GameObject ChallengeWinPanel = null;
+
+    ChallengeManager cm = null;
 
     Animator[] stars;
 
     // Start is called before the first frame update
     void Start()
     {
-        Par.text = "Par: " + GameManager.Instance().GetPar().ToString();
-        stars = StarHolder.GetComponentsInChildren<Animator>();
-    }
+        cm = FindObjectOfType<ChallengeManager>();
+        if (cm != null) // Playing the game in challenge mode
+        {
+            Par.text = "Level " + cm.currentMap + "/3";
+            StrokeCounter.text = "Strokes: " + cm.strokes + "/" + cm.par;
+        }
+        else // Player individual levels
+        {
+            Par.text = "Par: " + GameManager.Instance().GetPar().ToString();
+            stars = StarHolder.GetComponentsInChildren<Animator>();
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
         
     }
 
     public void UpdateStrokes(int strokes)
     {
-        StrokeCounter.text = "Strokes: " + strokes.ToString();
+        if (cm != null)
+        {
+            StrokeCounter.text = "Strokes: " + cm.strokes + "/" + cm.par;
+        }
+        else
+        {
+            StrokeCounter.text = "Strokes: " + strokes.ToString();
+        }
     }
 
     public void ShowStars(int numStars)
     {
-        showUI();
+        showWinPanel();
         StartCoroutine(ShowStarsCoroutine(numStars));
     }
 
@@ -48,9 +65,19 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    private void showUI()
+    private void showWinPanel()
     {
-        EndPanel.SetActive(true);
+        WinPanel.SetActive(true);
+    }
+
+    public void showLossPanel()
+    {
+        LosePanel.SetActive(true);
+    }
+
+    public void showChallengeWinPanel()
+    {
+        ChallengeWinPanel.SetActive(true);
     }
 
     public void LoadNextLevel()
