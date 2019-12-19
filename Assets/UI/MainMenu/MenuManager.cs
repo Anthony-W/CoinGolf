@@ -7,6 +7,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] RectTransform MainMenu = null;
     [SerializeField] RectTransform LevelSelectBase = null;
     [SerializeField] RectTransform[] LevelSelectSections = null;
+    [SerializeField] RectTransform Skins = null;
 
     static MenuManager instance;
     static RectTransform currentlyLoaded = null;
@@ -39,6 +40,14 @@ public class MenuManager : MonoBehaviour
     public static void LoadLevelSection(int section)
     {
         LoadPanel(instance.LevelSelectSections[section]);
+    }
+
+    /**
+     * Loads a panel for choosing a skin
+     */
+    public static void LoadSkins()
+    {
+        LoadPanel(instance.Skins);
     }
 
     #region Helper Methods

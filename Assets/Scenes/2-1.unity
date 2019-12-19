@@ -500,6 +500,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: WineGlassPrefab (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4605611142608466239, guid: b2f00f6e38030dd45b52964dbe4bdb89,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 8556262120643298411, guid: 4baa1e2d804527f4da661ff05ef7971d,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2f00f6e38030dd45b52964dbe4bdb89, type: 3}
 --- !u!1001 &2859905534424327436
@@ -512,7 +518,7 @@ PrefabInstance:
     - target: {fileID: 670884628729970316, guid: c53c9c67e5b13b347ac97224551d246d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.62
+      value: -3.25
       objectReference: {fileID: 0}
     - target: {fileID: 670884628729970316, guid: c53c9c67e5b13b347ac97224551d246d,
         type: 3}

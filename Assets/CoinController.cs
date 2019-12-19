@@ -19,6 +19,9 @@ public class CoinController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Material skin = FindObjectOfType<CoinSkin>().GetSkin();
+        GetComponent<MeshRenderer>().material = skin;
+
         rb = GetComponent<Rigidbody>();
         arrow = GetComponentInChildren<ExtendableArrow>(true);
         cam = Camera.main;
