@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CoinController : MonoBehaviour
 {
-    [SerializeField] float maxDraw = 2.5f;
-    [SerializeField] float forceMultiplier = 150;
+    [SerializeField] float maxDraw = 2.5f; // How far back you can pull
+    [SerializeField] float forceMultiplier = 150; // Increase the force applied
 
     Rigidbody rb;
     Camera cam;
@@ -27,8 +27,6 @@ public class CoinController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // TODO: fix all of these comments that don't make sense any more
-
         if (moving)
         {
             if (rb.velocity.magnitude < 0.01) moving = false;
@@ -100,5 +98,10 @@ public class CoinController : MonoBehaviour
     void applyForce()
     {
         rb.AddForce(force);
+    }
+
+    public bool isMoving()
+    {
+        return moving;
     }
 }

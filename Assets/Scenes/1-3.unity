@@ -500,6 +500,16 @@ PrefabInstance:
       propertyPath: oneStarStrokes
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 9222678001919703089, guid: d71fb81e3f79bf646a089f3c97f9fc52,
+        type: 3}
+      propertyPath: sectionNumber
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222678001919703089, guid: d71fb81e3f79bf646a089f3c97f9fc52,
+        type: 3}
+      propertyPath: levelNumber
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 9222678001977516080, guid: d71fb81e3f79bf646a089f3c97f9fc52,
         type: 3}
       propertyPath: m_LocalPosition.x
